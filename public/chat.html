@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/css/main.css">
+    <title>Chat.io chatroom</title>
+</head>
+<body class="d-flex text-center bg-secondary">
+    <div id="chat__window">
+        <header class="chat__window--header">
+            <div class="container-fluid chat__window--header-inner">
+                <div class="chat__window--header-left">
+                    <a href="/"><h1 class="h6 text-uppercase font-weight-bold text-white">Chat.io</h1></a>
+                </div>
+                <div class="chat__window--header-right">
+                    <a href="/" class="btn btn-danger btn-sm font-weight-bold text-white">Leave Room</a href="/  ">
+                </div>
+            </div>
+        </header>
+        <div class="chat__window--main">            
+            <div class="chat__window--main-container">
+                <div class="chat__window--sidebar">
+                    <div class="chat__window--sidebar--title">
+                        <h6 class="text-weight-bold"><img src="./node_modules/bootstrap-icons/icons/chat-text.svg" style="position: relative;bottom: 2px;" /> Room Name</h6>
+                    </div>
+                    <div class="chat__window--sidebar-rooms">
+                        <div class="chat__window--sidebar-name">
+                            <a href="#">JavaScript</a>
+                        </div>
+                    </div>
+                    <div class="chat__window--sidebar--title">
+                        <h6 class="text-weight-bold"><img src="./node_modules/bootstrap-icons/icons/person-circle.svg" style="position: relative;bottom: 2px;" /> Users</h6>
+                    </div>
+                    <div class="chat__window--sidebar-users">
+                        <div class="chat__window--sidebar-user">
+                            <ul>
+                                <a class="chat__window--sidebar-personal" href="#"><li>Chatbot</li></a>
+                                <a href="#"><li>Mikaela</li></a>
+                                <a href="#"><li>Jay</li></a>
+                                <a href="#"><li>Paige</li></a>
+                                <a href="#"><li>Amir</li></a>
+                                <a href="#"><li>Bobby</li></a>                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat__window--chat-window">
+                    <!-- <div class="chat__window--chat">
+                        <div class="chat__window--timestamp-name">
+                            <p>Mikaela June 13, 2020, 9:00pm</p>
+                        </div>
+                        <p class="chat__window--text">
+                            Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.
+                        </p>
+                    </div> -->
+
+                    <!-- <div class="chat__window--chat receiver">
+                        <div class="chat__window--timestamp-name">
+                            <p>Admin June 13, 2020, 9:00pm</p>
+                        </div>
+                        <p class="chat__window--text">
+                            Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.
+                        </p>
+                    </div> -->
+
+                    <!-- <div class="chat__window--chat">
+                        <div class="chat__window--timestamp-name">
+                            <p>Mikaela June 13, 2020, 9:00pm</p>
+                        </div>
+                        <p class="chat__window--text">
+                            Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.
+                        </p>
+                    </div> -->
+
+                </div>                
+            </div>
+            <div class="chat__window--enter-message">
+                <form id="chat-form" class="chat__window--inputMessage">
+                    <input type="text" id="msg" class="" placeholder="Enter Message.." />
+                    <button type="submit"> <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-reply" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M9.502 5.013a.144.144 0 0 0-.202.134V6.3a.5.5 0 0 1-.5.5c-.667 0-2.013.005-3.3.822-.984.624-1.99 1.76-2.595 3.876C3.925 10.515 5.09 9.982 6.11 9.7a8.741 8.741 0 0 1 1.921-.306 7.403 7.403 0 0 1 .798.008h.013l.005.001h.001L8.8 9.9l.05-.498a.5.5 0 0 1 .45.498v1.153c0 .108.11.176.202.134l3.984-2.933a.494.494 0 0 1 .042-.028.147.147 0 0 0 0-.252.494.494 0 0 1-.042-.028L9.502 5.013zM8.3 10.386a7.745 7.745 0 0 0-1.923.277c-1.326.368-2.896 1.201-3.94 3.08a.5.5 0 0 1-.933-.305c.464-3.71 1.886-5.662 3.46-6.66 1.245-.79 2.527-.942 3.336-.971v-.66a1.144 1.144 0 0 1 1.767-.96l3.994 2.94a1.147 1.147 0 0 1 0 1.946l-3.994 2.94a1.144 1.144 0 0 1-1.767-.96v-.667z"/>
+                      </svg> Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="./js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>
