@@ -4,6 +4,12 @@ const socket = io();
 const chatForm = document.getElementById('chat-form')
 const chatMessages = document.querySelector('.chat__window--chat-window')
 
+// Get username and room from querystring 
+const { username, room } = Qs.parse(location.search, {
+    ignoreQueryPrefix: true
+})
+
+console.log(username, room)
 
 // Catch emitted message from server
 socket.on('message', message => {
@@ -30,12 +36,13 @@ chatForm.addEventListener('submit', (event) => {
 // Output message to DOM 
 function outputMessage(message) {
     const div = document.createElement('div')
-    div.classList.add('chat__window--chat')
+    div.classList.add('chat__window--chat', 'animated', 'animatedFadeInUp', 'fadeInUp')
     div.innerHTML = `<div class="chat__window--timestamp-name">
-    <p>Chatbot June 13, 2020, 9:00pm</p>
+    <p>${message.username} ${ message.time }</p>
     </div>
-    <p class="chat__window--text">${ message }</p>`
+    <p class="chat__window--text">${ message.text }</p>`
 
     document.querySelector('.chat__window--chat-window').appendChild(div)
+
 }
 
